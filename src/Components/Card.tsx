@@ -7,25 +7,25 @@ export const Card: FC<{
   index: number;
   onClick: (index: number) => void;
 }> = ({ cardIndex, index, onClick }) => {
-  const [selected, setSelected] = useState<boolean>(
-    index === cardIndex ? true : false
-  );
+  // const [selected, setSelected] = useState<boolean>(
+  //   index === cardIndex ? true : false
+  // );
 
-  useEffect(() => {
-    if (index === cardIndex) {
-      setSelected(true);
-    }
-    console.log(selected, index, cardIndex);
-  }, [selected, cardIndex, index]);
+  // useEffect(() => {
+  //   if (index === cardIndex) {
+  //     setSelected(true);
+  //   }
+  //   console.log(selected, index, cardIndex);
+  // }, [selected, cardIndex, index]);
   return (
     <div
       className="accommodationClass"
-      style={{ borderColor: selected ? 'red' : 'black' }}
+      style={{ borderColor: index === cardIndex ? 'red' : 'black' }}
     >
       <div className="imageContainer">
         <button
           key={index}
-          style={{ color: selected ? 'red' : 'black' }}
+          style={{ color: index === cardIndex ? 'red' : 'black' }}
           onClick={() => onClick(index)}
         >
           Add to Favorites
